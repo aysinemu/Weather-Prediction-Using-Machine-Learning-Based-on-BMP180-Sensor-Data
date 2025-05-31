@@ -21,26 +21,23 @@ BMP180_IOCTL_READ_TEMP = 0x80046201
 BMP180_IOCTL_READ_PRESS = 0x80046202
 SAMPLE_COUNT = 5
 
-# Calibration constants
 AC1, AC2, AC3 = 8492, -1056, -14273
 AC4, AC5, AC6 = 33682, 25835, 15882
 B1, B2 = 6515, 36
 MB, MC, MD = -32768, -11786, 2311
 
-# Cấu hình thư mục gốc và static
 model_dir = './ai/model'
 model_files = [f for f in os.listdir(model_dir) if f.endswith('.pkl') and f != 'scaler.pkl']
 WORK_DIR = Path("/home/pi/Desktop/App/BMP180-Driver")
+# WORK_DIR = Path("M:\Embedded_System\App\BMP180-Driver")
 STATIC_DIR = WORK_DIR / "static"
 TEMP_DIR = STATIC_DIR / "temp"
 
 app = FastAPI(docs_url=None, redoc_url=None)
 
-# Mount static chuẩn để truy cập file trong /static/temp
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 templates = Jinja2Templates(directory=WORK_DIR / "templates")
 
-# Cho phép gọi API từ mọi nguồn
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -49,13 +46,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Dữ liệu user mẫu
 fake_users = {
     "admin": {"password": "1", "position": "admin"},
     "guest": {"password": "1", "position": "lecture"},
 }
 
-# Trang chủ
 @app.get("/")
 async def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
@@ -88,7 +83,7 @@ def get_sensor_data():
         X1 = ((avg_temp - AC6) * AC5) / 32768.0
         X2 = (MC * 2048.0) / (X1 + MD)
         B5 = X1 + X2
-        temp = (B5 + 8.0) / 16.0  # temp float, độ C * 10
+        temp = (B5 + 8.0) / 16.0 
 
         B6 = B5 - 4000.0
         X1 = (B2 * (B6 * B6 / 4096.0)) / 2048.0
@@ -116,7 +111,6 @@ def get_sensor_data():
         temperature = round(temp / 10.0, 4)
         pressure = round(p / 100.0, 4)
 
-        # Đưa vào model
         input_data = pd.DataFrame([[temperature, pressure]], columns=["temperature_C", "pressure_mb"])
         input_scaled = scaler.transform(input_data)
 
@@ -138,7 +132,6 @@ def get_sensor_data():
     except Exception as e:
         return {"error": str(e)}
 
-# Đăng nhập
 @app.post("/login")
 async def login(username: str = Form(...), password: str = Form(...)):
     if username in fake_users and fake_users[username]["password"] == password:
@@ -161,4 +154,5 @@ async def weather_page(request: Request):
 #     uvicorn.run("web:app", host="0.0.0.0", port=8000, reload=True)
 
 # sudo /home/pi/Desktop/App/BMP180-Driver/web/bin/uvicorn web:app --host 0.0.0.0 --port 8000 --reload
-
+# uvicorn web:app --host 0.0.0.0 --port 8000 --reload
+# ngrok http http://localhost:8000

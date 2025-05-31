@@ -53,7 +53,7 @@ models = {
     'Neural Network': MLPClassifier(max_iter=1000)
 }
 
-visualize_dir = '/home/pi/Desktop/App/BMP180-Driver/visualize'
+visualize_dir = 'M:\\Embedded_System\\App\\BMP180-Driver\\visualize'
 os.makedirs(visualize_dir, exist_ok=True)
 
 with open("results.txt", "w", encoding='utf-8') as f:

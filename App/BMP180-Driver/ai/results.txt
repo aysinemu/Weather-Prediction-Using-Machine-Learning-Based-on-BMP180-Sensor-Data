@@ -17,19 +17,19 @@ Weighted F1-score: 0.7635
 ------------------------------------------------------------
 
 🔹 Model: KNN
-Accuracy: 0.7114
+Accuracy: 0.7201
               precision    recall  f1-score   support
 
-           0       0.77      0.69      0.73      1026
-           1       0.65      0.74      0.70       821
+           0       0.76      0.72      0.74      1026
+           1       0.67      0.72      0.69       821
 
-    accuracy                           0.71      1847
-   macro avg       0.71      0.71      0.71      1847
-weighted avg       0.72      0.71      0.71      1847
+    accuracy                           0.72      1847
+   macro avg       0.72      0.72      0.72      1847
+weighted avg       0.72      0.72      0.72      1847
 
-Weighted Precision: 0.7183
-Weighted Recall: 0.7114
-Weighted F1-score: 0.7123
+Weighted Precision: 0.7226
+Weighted Recall: 0.7201
+Weighted F1-score: 0.7208
 
 ------------------------------------------------------------
 
@@ -51,19 +51,19 @@ Weighted F1-score: 0.7575
 ------------------------------------------------------------
 
 🔹 Model: Random Forest
-Accuracy: 0.7564
+Accuracy: 0.7569
               precision    recall  f1-score   support
 
            0       0.79      0.76      0.78      1026
            1       0.71      0.75      0.73       821
 
     accuracy                           0.76      1847
-   macro avg       0.75      0.76      0.75      1847
+   macro avg       0.75      0.76      0.76      1847
 weighted avg       0.76      0.76      0.76      1847
 
-Weighted Precision: 0.7582
-Weighted Recall: 0.7564
-Weighted F1-score: 0.7569
+Weighted Precision: 0.7588
+Weighted Recall: 0.7569
+Weighted F1-score: 0.7574
 
 ------------------------------------------------------------
 
@@ -119,18 +119,18 @@ Weighted F1-score: 0.7677
 ------------------------------------------------------------
 
 🔹 Model: Neural Network
-Accuracy: 0.7688
+Accuracy: 0.7677
               precision    recall  f1-score   support
 
-           0       0.80      0.78      0.79      1026
-           1       0.73      0.76      0.74       821
+           0       0.81      0.76      0.78      1026
+           1       0.72      0.78      0.75       821
 
     accuracy                           0.77      1847
    macro avg       0.77      0.77      0.77      1847
 weighted avg       0.77      0.77      0.77      1847
 
-Weighted Precision: 0.7698
-Weighted Recall: 0.7688
-Weighted F1-score: 0.7691
+Weighted Precision: 0.7712
+Weighted Recall: 0.7677
+Weighted F1-score: 0.7684
 
 ------------------------------------------------------------

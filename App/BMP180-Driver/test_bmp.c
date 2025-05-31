@@ -16,14 +16,12 @@ int main() {
     int fd;
     int data;
 
-    // Open the device
     fd = open(DEVICE_PATH, O_RDONLY);
     if (fd < 0) {
         perror("Failed to open the device");
         return errno;
     }
 
-    // Read temperature
     if (ioctl(fd, BMP180_IOCTL_READ_TEMP, &data) < 0) {
         perror("Failed to read temperature");
         close(fd);
@@ -31,7 +29,6 @@ int main() {
     }
     printf("Temperature (raw): %d\n", data);
 
-    // Read pressure
     if (ioctl(fd, BMP180_IOCTL_READ_PRESS, &data) < 0) {
         perror("Failed to read pressure");
         close(fd);
@@ -39,7 +36,6 @@ int main() {
     }
     printf("Pressure (raw): %d\n", data);
 
-    // Close the device
     close(fd);
     return 0;
 }
