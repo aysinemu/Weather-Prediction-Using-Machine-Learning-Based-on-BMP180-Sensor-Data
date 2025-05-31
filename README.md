@@ -1,6 +1,6 @@
 Nguyễn Châu Tấn Cường - 23146007
 
-# BMP180-Driver
+# Weather-Prediction-Using-Machine-Learning-Based + BMP180-Driver
 
 - This is a Linux device driver for the BMP180 pressure and temperature sensor using the I2C interface. The driver allows user-space applications to communicate with the sensor through a character device and uses the `ioctl` interface for issuing commands to retrieve temperature and pressure data.
 
@@ -62,9 +62,9 @@ This driver supports Device Tree binding using the compatible string:
 ### Clone project
 
 ```
-git clone https://github.com/aysinemu/BMP180-Driver.git
+git clone https://github.com/aysinemu/BMP180-Driver.git](https://github.com/aysinemu/Weather-Prediction-Using-Machine-Learning-Based-on-BMP180-Sensor-Data.git
 
-cd BMP180-Driver
+cd ./App/BMP180-Driver
 ```
 
 ### Building and Installing the Module
@@ -131,12 +131,44 @@ Show :
 60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 70: -- -- -- -- -- -- -- 77           
 
-Step 3 : Install driver.
+Step 3 : Find EEPROM.
+
+gcc -o eeprom eeprom.c
+
+sudo ./eeprom
+
+Show :
+  AC1 = 8492
+  AC2 = -1056
+  AC3 = -14273
+  AC4 = 33682
+  AC5 = 25835
+  AC6 = 15882
+  B1  = 6515
+  B2  = 36
+  MB  = -32768
+  MC  = -11786
+  MD  = 2311
+
+Step 4 : Install driver.
 
 Make
 
 sudo insmod bmp180_driver.ko
+
+Step 5 : Install enviroments (Using Venv or Conda).
+
+pip install -r requirements.txt
+
+Step 6 : Monitor on Web 
+
+sudo web:app --host 0.0.0.0 --port 8000 --reload
 ```
+
+### User/Pass
+
+* `User`:  admin - `Pass`:  1
+* `User`:  guest - `Pass`:  1
 
 ### Uninstalling the Module
 
@@ -179,3 +211,26 @@ To list all module installed:
 ```
 ls /dev
 ```
+
+### Data:
+
+```
+HCM Weather Data
+
+python data.py
+
+python opti.py
+
+Link Web : https://www.worldweatheronline.com/weather-api/ (scaler.pkl)
+```
+
+### Model:
+
+* `Decision_Tree.pkl`
+* `Gradient_Boosting.pkl`
+* `KNN.pkl`
+* `SVM.pkl`
+* `Logistic_Regression.pkl`
+* `Naive_Bayes.pkl`
+* `Neural_Network.pkl`
+* `Random_Forest.pkl`
