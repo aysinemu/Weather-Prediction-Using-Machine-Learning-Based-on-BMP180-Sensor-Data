@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather Analysis</title>
+  <link rel="stylesheet" href="/static/weather.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px; justify-content: center;">
+    <p id="currentTime"></p>
+    <p id="predictionResult"></p>
+  </div>
+  
+  <div class="flex-container">
+    <div class="temp-info">
+      <h4>Danh sách Nhiệt độ (mới nhất):</h4>
+      <ul id="temperatureList"></ul>
+    </div>
+    <canvas id="temperatureChart"></canvas>
+  </div>  
+
+  <div class="flex-container">
+    <div class="temp-info">
+      <h4>Danh sách Áp suất (mới nhất):</h4>
+      <ul id="pressureList"></ul>
+    </div>
+    <canvas id="pressureChart"></canvas>
+  </div>  
+  
+  <script src="/static/chart.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/App/BMP180-Driver/bmp180_driver.ko := ld -r -EL -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/pi/Desktop/App/BMP180-Driver/bmp180_driver.ko /home/pi/Desktop/App/BMP180-Driver/bmp180_driver.o /home/pi/Desktop/App/BMP180-Driver/bmp180_driver.mod.o;  true

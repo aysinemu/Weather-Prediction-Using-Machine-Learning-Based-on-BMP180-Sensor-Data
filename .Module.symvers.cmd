@@ -1,0 +1,1 @@
+cmd_/home/pi/Desktop/App/BMP180-Driver/Module.symvers :=  sed 's/ko$$/o/'  /home/pi/Desktop/App/BMP180-Driver/modules.order | scripts/mod/modpost -m -a    -o /home/pi/Desktop/App/BMP180-Driver/Module.symvers -e -i Module.symvers -T - 
