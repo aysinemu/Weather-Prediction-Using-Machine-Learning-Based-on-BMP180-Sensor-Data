@@ -165,6 +165,11 @@ Step 6 : Monitor on Web
 sudo web:app --host 0.0.0.0 --port 8000 --reload
 ```
 
+### User/Pass
+
+* `User`:  admin - `Pass`:  1
+* `User`:  guest - `Pass`:  1
+
 ### Uninstalling the Module
 
 ```
