@@ -1,6 +1,6 @@
 Nguyễn Châu Tấn Cường - 23146007
 
-# Weather-Prediction-Using-Machine-Learning-Based + BMP180-Driver
+# Weather-Prediction-Using-Machine-Learning-Based + BMP180-Driver + Deploy Web + App(Phone)
 
 - This is a Linux device driver for the BMP180 pressure and temperature sensor using the I2C interface. The driver allows user-space applications to communicate with the sensor through a character device and uses the `ioctl` interface for issuing commands to retrieve temperature and pressure data.
 
@@ -163,6 +163,22 @@ pip install -r requirements.txt
 Step 6 : Monitor on Web 
 
 sudo web:app --host 0.0.0.0 --port 8000 --reload
+
+Step 7 : Install ngrok
+
+Link: https://dashboard.ngrok.com/get-started/setup/raspberrypi
+
+Step 8 :  Ngrok
+
+ngrok http http://localhost:8000 (Same port with web)
+
+Step 9 : Plug your phone to computer and install the App (APK) - Make sure to install Flutter SDK first
+
+flutter devices #Check your devices
+flutter build apk --release
+flutter install
+
+Step 10 : Unplug your phone and use normally
 ```
 
 ### User/Pass
