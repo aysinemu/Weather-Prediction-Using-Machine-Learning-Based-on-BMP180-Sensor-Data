@@ -2,6 +2,12 @@ Nguyễn Châu Tấn Cường - 23146007
 
 # Weather-Prediction-Using-Machine-Learning-Based + BMP180-Driver + Deploy Web + App(Phone)
 
+![image](./App/BMP180-Driver/WebAndAppImage/z6660796769528_1ef81c4d261a9fe2b30840e79dc83877.jpg)
+![image](./App/BMP180-Driver/WebAndAppImage/z6660796798624_354516c5cce5f806d6715322c9289bbd.jpg)
+![image](./App/BMP180-Driver/WebAndAppImage/z6660810722929_b20e8b528615f1c518a5ef90d4cd09cc.jpg)
+![image](./App/BMP180-Driver/WebAndAppImage/z6660810722959_4c233c455ae295945dec8005d498291f.jpg)
+![image](./App/BMP180-Driver/WebAndAppImage/z6660810768075_ac2c9577bca9c7d4f6ce8703f11e2493.jpg)
+
 - This is a Linux device driver for the BMP180 pressure and temperature sensor using the I2C interface. The driver allows user-space applications to communicate with the sensor through a character device and uses the `ioctl` interface for issuing commands to retrieve temperature and pressure data.
 
 ### Hardware requirements
