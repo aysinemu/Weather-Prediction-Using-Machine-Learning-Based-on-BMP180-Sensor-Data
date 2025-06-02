@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 from datetime import datetime, timedelta
 
-API_KEY = '96bde6d6b3dc4f51900122650253005' 
+API_KEY = 'XXXXXXXXXXXXXXXXXXX' 
 LOCATION = 'Ho Chi Minh City'
 FORMAT = 'json'
 TIME_STEP = 24 
