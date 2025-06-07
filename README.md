@@ -178,6 +178,9 @@ Step 8 :  Ngrok
 
 ngrok http http://localhost:8000 (Same port with web)
 
+The new link will be look like this : https://c3ef-2401-d800-8d2-c88d-6deb-8c98-3af7-f21b.ngrok-free.app
+Use that link to go to the Web and App
+
 Step 9 : Plug your phone to computer and install the App (APK) - Make sure to install Flutter SDK first
 
 flutter devices #Check your devices
