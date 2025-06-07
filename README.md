@@ -256,3 +256,23 @@ Link Web : https://www.worldweatheronline.com/weather-api/ (scaler.pkl)
 * `Naive_Bayes.pkl`
 * `Neural_Network.pkl`
 * `Random_Forest.pkl`
+
+### Auto StartUp:
+
+```
+
+Step 1 : Using Crontab to Automatic StartUP
+
+crontab -e
+
+Step 2 : Click on the nano to edit and add this line
+
+@reboot /home/pi/Desktop/App/BMP180-Driver/start_app_web.sh
+
+After Ctrl + O + Enter + X
+
+Step 3 : Reboot Ras
+
+sudo reboot now
+
+```
