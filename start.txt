@@ -1,0 +1,3 @@
+crontab -e
+
+@reboot /home/pi/Desktop/App/BMP180-Driver/start_app_web.sh
