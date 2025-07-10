@@ -93,5 +93,5 @@ with open("results.txt", "w", encoding='utf-8') as f:
 
         f.write("\n" + "-"*60 + "\n")
 
-print("✅ Hoàn thành training.")
-print("📁 Kết quả lưu vào: results.txt, models/, visualize/")
+print("Hoàn thành training.")
+print("Kết quả lưu vào: results.txt, models/, visualize/")
