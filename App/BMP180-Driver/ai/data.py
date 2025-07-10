@@ -52,4 +52,4 @@ while start_date < end_date:
 
 df = pd.DataFrame(all_data)
 df.to_csv('/home/pi/Desktop/App/BMP180-Driver/ai/data/hcm_weather.csv', index=False)
-print("✅ Đã lưu thành công vào 'hcm_weather_past_year.csv'")
+print("Đã lưu thành công vào 'hcm_weather_past_year.csv'")
