@@ -22,11 +22,11 @@ input_scaled = scaler.transform(input_data)
 
 predictions = []
 
-print("\n🔍 Dự đoán của từng mô hình:")
+print("\nDự đoán của từng mô hình:")
 for name, model in models.items():
     pred = model.predict(input_scaled)[0]
     predictions.append(pred)
     print(f"{name}: {pred}")
 
 final_prediction = Counter(predictions).most_common(1)[0][0]
-print("\n✅ Kết quả cuối cùng sau Voting:", "Rain" if final_prediction == 1 else "Sunny")
+print("\nKết quả cuối cùng sau Voting:", "Rain" if final_prediction == 1 else "Sunny")
